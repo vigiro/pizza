@@ -53,26 +53,26 @@ class ViewOrdenController: UIViewController {
     
     @IBAction func btnAccept(sender: AnyObject) {
         print("Send kitchen")
-        showAlertMessage("Confirm", message: "Confirm to send your order to the kitchen", owner: self)
+        showAlertMessage("Confirma", message: "Confirmar mandar orden a la cocina", owner: self)
     }
     
     @IBAction func btnCancel(sender: AnyObject) {
-        print("Edit or cancel")
+        print("Edita or cancela")
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     func showAlertMessage (title: String, message: String, owner:UIViewController) {
         //        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.ActionSheet)
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default, handler:{ (ACTION:UIAlertAction!)in
-            self.lblConfirm.text = "Your order has been sent to the kitchen"
+        alert.addAction(UIAlertAction(title: "Acepta", style: UIAlertActionStyle.Default, handler:{ (ACTION:UIAlertAction!)in
+            self.lblConfirm.text = "Yu orden a sido envia a la cocina"
             self.btnCancel.hidden = true
             self.btnAccept.hidden = true
             self.btnNewOrder.hidden = false
             //print("User click Accept button")
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{ (ACTION:UIAlertAction!)in
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Cancel, handler:{ (ACTION:UIAlertAction!)in
             //print("User click Cancel button")
         }))
         self.presentViewController(alert, animated: true, completion: nil)
